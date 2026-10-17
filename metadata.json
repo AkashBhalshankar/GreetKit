@@ -1,0 +1,6 @@
+{
+  "name": "Greetkit - Interactive Living Greetings",
+  "description": "Send greetings that feel like an experience. Blow out real candles with your mic, light festive diyas, level up life stats, and share via one instant link.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes flameFlicker {
+    0%, 100% {
+      transform: scale(1) rotate(-1.5deg);
+      opacity: 0.95;
+    }
+    25% {
+      transform: scale(1.05, 0.94) rotate(1deg);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.96, 1.06) rotate(-0.5deg);
+      opacity: 0.9;
+    }
+    75% {
+      transform: scale(1.04, 0.98) rotate(1.5deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes gentleFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes smokeAscend {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-12px) scale(1.2);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-24px) scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  @keyframes glowBreathing {
+    0%, 100% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes sparkleTwinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2) rotate(45deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 16s linear infinite;
+  }
+
+  .animate-flame {
+    animation: flameFlicker 0.45s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+
+  .animate-float {
+    animation: gentleFloat 3.5s ease-in-out infinite;
+  }
+
+  .animate-smoke {
+    animation: smokeAscend 1.2s ease-out forwards;
+  }
+
+  .animate-glow-breath {
+    animation: glowBreathing 2.4s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: sparkleTwinkle 1.8s ease-in-out infinite;
+  }
+}
+
+/* Micro-interaction polish */
+button, a {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom delicate scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E6DFD5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8CEBF;
+}
